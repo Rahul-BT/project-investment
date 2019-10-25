@@ -1,0 +1,147 @@
+body {
+    font-family: ;
+    background-color: whitesmoke
+}
+
+.wrapper {
+    border-width: 2px;
+    border-color: blue;
+    
+    
+    
+}
+
+
+.invst {
+    border-style: solid;
+    border-width: 2px;
+    border-color: blue;
+    padding: 10px;
+    width: 100%;
+    height: 200px;
+    
+    
+}
+
+.invst--part-1 {
+    
+    float: left;
+    border-style: solid;
+    border-width: 2px;
+    border-color: green;
+    padding: 10px;
+    width: 60%;
+}
+
+table {
+    margin: 0px;
+    border-collapse: collapse;
+    width: 100%;
+    
+}
+
+th {
+    background-color: wheat;
+    
+}
+
+.invst--table--heading {
+    color: #28B9B5;
+    text-align: left;
+    
+    
+}
+
+tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+
+
+.invst--table--row {
+    
+}
+
+.invst--part-2  {
+    float: left;
+    border-style: solid;
+    border-width: 2px;
+    border-color: yellowgreen;
+    padding: 10px;
+    margin-left: 10px;
+}
+
+.total--invst--table {
+    margin: 0px;
+    border-collapse: collapse;
+    
+    
+}
+
+.total--invst--table--heading {
+    
+}
+
+.total--invst--table--row {
+    
+}
+
+.dentist {
+    border-style: solid;
+    border-width: 2px;
+    border-color: blue;
+    padding: 10px;
+    height: 200px;
+    
+}
+.dentist--part-1 {
+    float: left;
+    border-style: solid;
+    border-width: 2px;
+    border-color: red;
+    padding: 10px;
+    width: 20%;
+    
+}
+
+.dentist--table {
+    
+}
+
+.dentist--table--heading {
+    
+}
+
+.dentist--table--row {
+    
+}
+
+.dentist--part-2 {
+    float: left;
+    border-style: solid;
+    border-width: 2px;
+    border-color: khaki;
+    padding: 10px;
+    margin-left: 10px;
+    
+}
+
+.total--dentist--table {
+    
+}
+
+.total--dentist--table--heading {
+    
+}
+
+.total--dentist--table--row {
+    
+}
+
+
+
+
+
+
+
+
