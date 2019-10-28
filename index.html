@@ -35,7 +35,7 @@
                                 <td><input style="width: 140px;" type="text" placeholder="RX" value="Canara"></td>
                                 <td><input style="width: 40px;" type="text" placeholder="Type" value="RD"></td>
                                 <td><input style="width: 70px;" type="number" placeholder="Amount" value=1000></td>
-                                <td><input style="width: 70px;" type="number" placeholder="Maturity" value=2000></td>
+                                <td><input style="width: 70px;" type="number" placeholder="Maturity" value=1300></td>
                                 <td><input style="width: 80px;" type="text" placeholder="End Date" value="12-11-2020"></td>
                                 <td><input style="width: 70px; display: none;" type="number" placeholder="RoI"></td>
                                 <td><input style="width: 70px; display: none;" type="number" placeholder="Months"></td>
@@ -86,16 +86,20 @@
                 
                 <div class="invst--part-2  "><h2>Investment Sumary</h2>
                     <table class="total--invst--table">
-                        <tr class="total--invst--table--heading">
-                            <th>Total Investment</th>
-                            <th>Total Returns</th>
-                            <th>Profit Increase</th>
-                        </tr>
-                        <tr class="total--invst--table--row">
-                            <td>6,99,500</td>
-                            <td>7,66,060</td>
-                            <td>9.513%</td>
-                        </tr>
+                        <thead>
+                            <tr>
+                                <th class="total--invst--table--heading">Total Investment</th>
+                                <th class="total--invst--table--heading">Total Returns</th>
+                                <th class="total--invst--table--heading">Profit Increase</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="total--invst--table--row" id="invst_sum">6,99,500</td>
+                                <td class="total--invst--table--row" id="invst_return">7,66,060</td>
+                                <td class="total--invst--table--row" id="invst_profit">9.513%</td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
             

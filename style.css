@@ -31,8 +31,6 @@ body {
     width: auto;
     top: 100px;
     position: relative;
-    
-    
 }
 
 .invst--part-1 {
@@ -48,27 +46,20 @@ body {
 table {
     margin: 0px;
     border-collapse: collapse;
-
-    
-    
 }
 
 th {
     background-color: wheat;   
-    
     text-align: center;
 }
 
 td {
     padding: 5px 8px 5px 8px;
-    
 }
 
-.invst--table--heading {
+.invst--table--heading, .total--invst--table--heading{
     color: #28B9B5;
     text-align: left;
-    
-    
 }
 
 
@@ -96,11 +87,9 @@ td {
     
 }
 
-.total--invst--table--heading {
-    
-}
-
-.total--invst--table--row {
+.total--invst--table--heading, .total--invst--table--row {
+    width:550px;
+    text-align: center;
     
 }
 
@@ -178,6 +167,7 @@ td {
 .item__add--btn { color: #28B9B5;}
 .item__delete--btn { color: #eb5834; }
 .item__delete--btn:active { transform: translateY(10%); }
+.item__add--btn:active { transform: translateY(10%); }
 
 input {
     width: 20px;
