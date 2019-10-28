@@ -11,7 +11,7 @@
 
     <body>
         <div class="wrapper">Wrapper Box testing
-            <div class="invst clearfix">
+            <div class="invst ">
                 <div class="invst--part-1 "><h2>Investment Details</h2>
                     <table class="invst--table">
                         <tr class="invst--table--heading">
@@ -23,8 +23,21 @@
                             <th>Maturity</th>
                             <th>End Date</th>
                             <th>RoI</th>
-                            <th>Time (Months)</th>
+                            <th>Months</th>
                             <th>RoI/yr</th>
+                            <th></th>
+                        </tr>
+                        <tr class="invst--table--row" id="invst-0">
+                            <td><input style="width: 80px;" type="text" placeholder="Date"></td>
+                            <td><input style="width: 140px;" type="text" placeholder="RX"></td>
+                            <td><input style="width: 30px;" type="text" placeholder="Type"></td>
+                            <td><input style="width: 50px;" type="number" placeholder="Amount"></td>
+                            <td><input style="width: 50px;" type="number" placeholder="Maturity"></td>
+                            <td><input style="width: 80px;" type="text" placeholder="End Date"></td>
+                            <td><input style="width: 50px;" type="numer" placeholder="RoI"></td>
+                            <td><input style="width: 45px;" type="number" placeholder="Months"></td>
+                            <td></td>
+                            
                         </tr>
                         <tr class="invst--table--row" id="invst-1">
                             <td>11-09-2019</td>
@@ -36,6 +49,7 @@
                             <td>8.04%</td>
                             <td>12</td>
                             <td>8.04%</td>
+                            <td><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></td>
                         </tr>
                         <tr class="invst--table--row" id="invst-2">
                             <td>11-10-2019</td>
@@ -47,6 +61,7 @@
                             <td>8.04%</td>
                             <td>12</td>
                             <td>8.04%</td>
+                            <td><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></td>
                         </tr>
                         <tr class="invst--table--row" id="invst-3">
                             <td></td>
@@ -58,12 +73,13 @@
                             <td>16.15%</td>
                             <td>24</td>
                             <td>8.07%</td>
+                            <td><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></td>
                         </tr>
                     
                     </table>
                 </div>
                 
-                <div class="invst--part-2 "><h2>Investment Sumary</h2>
+                <div class="invst--part-2  "><h2>Investment Sumary</h2>
                     <table class="total--invst--table">
                         <tr class="total--invst--table--heading">
                             <th>Total Investment</th>
@@ -82,7 +98,7 @@
                 
             
             <div class="dentist">
-                <div class="dentist--part-1 "><h2>Dent Investment</h2>
+                <div class="dentist--part-1 clearfix"><h2>Dent Investment</h2>
                     <table class="dentist--table">
                         <tr class="dentist--table--heading">
                             <th>Date of Deposit</th>
@@ -102,7 +118,7 @@
                     </table>
                 </div>
                 
-                <div class="dentist--part-2 cleafix"> <h2>Dent Investment Summary</h2>
+                <div class="dentist--part-2 clearfix"> <h2>Dent Investment Summary</h2>
                     <table class="total--dentist--table">
                         <tr class="total--dentist--table--heading">
                             <th>Total Investment</th>
