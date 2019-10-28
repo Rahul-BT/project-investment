@@ -14,67 +14,72 @@
             <div class="invst ">
                 <div class="invst--part-1 "><h2>Investment Details</h2>
                     <table class="invst--table">
-                        <tr class="invst--table--heading">
-                            <th>Date</th>
-                            <th>RX</th>
-                            <th>Type</th>
-<!--                            <th>Start Date</th>-->
-                            <th>Amount</th>
-                            <th>Maturity</th>
-                            <th>End Date</th>
-                            <th>RoI</th>
-                            <th>Months</th>
-                            <th>RoI/yr</th>
-                            <th></th>
-                        </tr>
-                        <tr class="invst--table--row" id="invst-0">
-                            <td><input style="width: 80px;" type="text" placeholder="Date"></td>
-                            <td><input style="width: 140px;" type="text" placeholder="RX"></td>
-                            <td><input style="width: 30px;" type="text" placeholder="Type"></td>
-                            <td><input style="width: 50px;" type="number" placeholder="Amount"></td>
-                            <td><input style="width: 50px;" type="number" placeholder="Maturity"></td>
-                            <td><input style="width: 80px;" type="text" placeholder="End Date"></td>
-                            <td><input style="width: 50px;" type="numer" placeholder="RoI"></td>
-                            <td><input style="width: 45px;" type="number" placeholder="Months"></td>
-                            <td></td>
-                            
-                        </tr>
-                        <tr class="invst--table--row" id="invst-1">
-                            <td>11-09-2019</td>
-                            <td>Deepak Federal Bank</td>
-                            <td>FD</td>
-                            <td>75,000</td>
-                            <td>80,133</td>
-                            <td>12-09-2020</td>
-                            <td>8.04%</td>
-                            <td>12</td>
-                            <td>8.04%</td>
-                            <td><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></td>
-                        </tr>
-                        <tr class="invst--table--row" id="invst-2">
-                            <td>11-10-2019</td>
-                            <td>Deepak Federal Bank</td>
-                            <td>FD</td>
-                            <td>25,000</td>
-                            <td>27,011</td>
-                            <td>12-10-2020</td>
-                            <td>8.04%</td>
-                            <td>12</td>
-                            <td>8.04%</td>
-                            <td><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></td>
-                        </tr>
-                        <tr class="invst--table--row" id="invst-3">
-                            <td></td>
-                            <td>HDFC Bank</td>
-                            <td>FD</td>
-                            <td>35,000</td>
-                            <td>40,652</td>
-                            <td>24-07-2021</td>
-                            <td>16.15%</td>
-                            <td>24</td>
-                            <td>8.07%</td>
-                            <td><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></td>
-                        </tr>
+                        <thead class="invst--table--heading">
+                            <tr>
+                                <th>Date</th>
+                                <th>RX</th>
+                                <th>Type</th>
+    <!--                            <th>Start Date</th>-->
+                                <th>Amount</th>
+                                <th>Maturity</th>
+                                <th>End Date</th>
+                                <th>RoI</th>
+                                <th>Months</th>
+                                <th>RoI/yr</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody class="invst--table--row">
+                            <tr class="invst--table--input" id="invst-0">
+                                <td><input style="width: 80px;" type="text" placeholder="Date" value="11-11-2019"></td>
+                                <td><input style="width: 140px;" type="text" placeholder="RX" value="Canara"></td>
+                                <td><input style="width: 40px;" type="text" placeholder="Type" value="RD"></td>
+                                <td><input style="width: 70px;" type="number" placeholder="Amount" value=1000></td>
+                                <td><input style="width: 70px;" type="number" placeholder="Maturity" value=2000></td>
+                                <td><input style="width: 80px;" type="text" placeholder="End Date" value="12-11-2020"></td>
+                                <td><input style="width: 70px; display: none;" type="number" placeholder="RoI"></td>
+                                <td><input style="width: 70px; display: none;" type="number" placeholder="Months"></td>
+                                <td></td>
+                                <td><button class="item__add--btn"><ion-icon name="add-circle-outline"></ion-icon></button></td>
+                                
+                            </tr>
+                            <tr id="invst-1">
+                                <td>11-09-2019</td>
+                                <td>Deepak Federal Bank</td>
+                                <td>FD</td>
+                                <td>75,000</td>
+                                <td>80,133</td>
+                                <td>12-09-2020</td>
+                                <td>8.04%</td>
+                                <td>12</td>
+                                <td>8.04%</td>
+                                <td><button class="item__delete--btn"><ion-icon name="close-circle-outline"></ion-icon></button></td>
+                            </tr>
+                            <tr id="invst-2">
+                                <td>11-10-2019</td>
+                                <td>Deepak Federal Bank</td>
+                                <td>FD</td>
+                                <td>25,000</td>
+                                <td>27,011</td>
+                                <td>12-10-2020</td>
+                                <td>8.04%</td>
+                                <td>12</td>
+                                <td>8.04%</td>
+                                <td><button class="item__delete--btn"><ion-icon name="close-circle-outline"></ion-icon></button></td>
+                            </tr>
+                            <tr id="invst-3">
+                                <td></td>
+                                <td>HDFC Bank</td>
+                                <td>FD</td>
+                                <td>35,000</td>
+                                <td>40,652</td>
+                                <td>24-07-2021</td>
+                                <td>16.15%</td>
+                                <td>24</td>
+                                <td>8.07%</td>
+                                <td><button class="item__delete--btn"><ion-icon name="close-circle-outline"></ion-icon></button></td>
+                            </tr>
+                        </tbody>
                     
                     </table>
                 </div>
@@ -133,6 +138,8 @@
             
             
         </div>
-        
+        <script src="script.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule="" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"></script>
     </body>
 </html>
