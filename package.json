@@ -1,0 +1,23 @@
+{
+  "name": "project-investment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rahul-BT/project-investment.git"
+  },
+  "author": "rahul b thomas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rahul-BT/project-investment/issues"
+  },
+  "homepage": "https://github.com/Rahul-BT/project-investment#readme",
+  "devDependencies": {
+    "webpack": "^4.41.2",
+    "webpack-dev-server": "^3.9.0"
+  }
+}

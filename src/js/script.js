@@ -27,6 +27,8 @@ function calcSum(obj, key) {
 
 }
 
+
+
 class UIedits {
     constructor() {
         this.DOMstrings = {
@@ -121,12 +123,15 @@ class UIedits {
         // Display it in the UI
         ui.displayInvestSumm(investSum, investReturn, investProfit);
 
+        // Log it in the DB
 
-        // Log it in the database
     });
 
     document.querySelector(ui.DOMstrings.invst_item_del).addEventListener('click', () => {
         // delete from allInvestments
+
+        // Add to DB
+
 
         // update the investment table
 
