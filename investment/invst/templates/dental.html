@@ -1,0 +1,44 @@
+
+{% extends "base.html"%}
+
+{% block content %}
+{% load static %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12"><h1>Dental Funds</h1>
+                <table class="table table-hover dental-table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Date</th>
+                            <th style="width: 40%;">RX</th>
+                            <th>Amount</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="dental--table--input" id="dental-0">
+                            <form action="{% url 'add_dental' %}" method="POST" id="form2">
+                                {% csrf_token %}
+                                <td><input name="date" type="text" placeholder="Date" value="11-11-2019"></td>
+                                <td><input style="width: 90%; text-align: left;" name="rx" type="text" placeholder="RX" value="UCO Bank"></td>
+                                <td><input type="number" name="amount" placeholder="Amount" step="5000.00" value=10000.00></td>
+                            </form>
+                            <td><button type="submit" form="form2" class="item__add--btn"><img width="25px" height="25px" src="{% static 'img/plus-circle.svg' %}" /></button></td>
+                        </tr>
+                        
+                        {% for i in row %}
+                        <tr id="dental-{{ i.id }}">
+                            <td>{{ i.date | date:'d-m-Y'}}</td>
+                            <td>{{ i.rx }}</td>
+                            <td >{{ i.amount }}</td>
+                            <td><button type="click"  class="item__delete--btn"><a href="delete-dental-{{ i.id }}"><img width="25px" height="25px" src="{% static 'img/trash-2.svg' %}" /></a></button>
+                            </td>
+                        </tr>
+                        {% endfor %}
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

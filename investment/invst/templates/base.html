@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,600" rel="stylesheet" type="text/css">
+        <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Gelasio&display=swap" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="{% static 'css/bootstrap-grid.css' %}">
+        <link type="text/css" rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+        <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}">
+        
+        <title>Investment</title>
+    </head>
+
+    <body>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Investments</a></li>
+                <li><a href="{% url 'mf' %}">Mutual Funds</a></li>
+                <li><a href="{% url 'dental' %}">Dentist</a></li>
+            </ul>
+        </nav>
+
+        {% block content %}
+        {% endblock content %}
+        
+        <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule="" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"></script>
+    </body>
+</html>

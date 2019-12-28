@@ -1,7 +1,14 @@
-from django.conf.urls import url
+from django.urls import path, re_path
 from invst import views
 
 urlpatterns = [
-    url(r'^$', views.HomePageView.as_view(), name='home'), # Notice the URL has been named
-    url(r'^about/$', views.AboutPageView.as_view(), name='about'),
+    path("", views.HomePageView, name='home'), # Notice the URL has been named
+    path("invst", views.HomePageView, name='invst'),
+    path("mf", views.mfView, name='mf'),
+    path("dental", views.dentalView, name='dental'),
+    path("add-invst", views.addInvestment, name='add_investment'),
+    path("add-mf", views.addMF, name='add_mf'),
+    path("add-dental", views.addDental, name='add_dental'),
+    path("delete-<str:modelName>-<int:list_id>", views.delInvestment, name='del_investment')
+    # re_path(r'^delete-(\d*)$', views.delInvestment, name='del_investment')
 ]

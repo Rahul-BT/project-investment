@@ -1,0 +1,50 @@
+
+{% extends "base.html"%}
+
+{% block content %}
+{% load static %}
+    <div class="container mf-container">
+        <div class="row">
+            <div class="col"><h1>Mutual Funds</h1>
+                <table class="table table-hover mf-table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th style="width: 13%;">Date</th>
+                            <th style="width: 50%;">Plan Name</th scope="col">
+                            <th style="width: 10%;">Platform</th scope="col">
+                            <th style="width: 10%;">Amount</th scope="col">
+                            <th style="width: 7%;">Lock-In</th scope="col">
+                            <th style="width: 10%;"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="mf--table--input" id="mf-0">
+                            <form action="{% url 'add_mf' %}" method="POST" id="form2">
+                                {% csrf_token %}
+                                <td><input style="width: 100%;" name="date" type="text" placeholder="Date" value="11-11-2019"></td>
+                                <td><input style="width: 100%; text-align: left;" name="planName" type="text" placeholder="RX" value="Axis Direct Fund"></td>
+                                <td><input style="width: 100%;" type="text" name="platform" placeholder="Type" value="Groww"></td>
+                                <td><input style="width: 100%;" type="number" name="amount" placeholder="Amount" value=10000.00></td>
+                                <td><input style="width: 100%;" type="number" name="lockin" placeholder="Lock-In" value=3.0></td>
+                            </form>
+                            <td><button type="submit" form="form2" class="item__add--btn"><img width="25px" height="25px" src="{% static 'img/plus-circle.svg' %}" /></button></td>
+                        </tr>
+                        
+                        {% for i in row %}
+                        <tr id="mf-{{ i.id }}">
+                            <td>{{ i.date | date:'d-m-Y'}}</td>
+                            <td>{{ i.planName }}</td>
+                            <td>{{ i.platform }}</td>
+                            <td >{{ i.amount }}</td>
+                            <td >{{ i.lockin }}</td>
+                            <td><button type="click"  class="item__delete--btn"><a href="delete-mf-{{ i.id }}"><img width="25px" height="25px" src="{% static 'img/trash-2.svg' %}" /></a></button>
+                            </td>
+                        </tr>
+                        {% endfor %}
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

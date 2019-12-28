@@ -94,8 +94,9 @@ class UIedits {
     let allInvestments = [];
     const ui = new UIedits();
 
-    document.querySelector(ui.DOMstrings.invst_item_add).addEventListener('click', () => {
+    document.querySelector(ui.DOMstrings.invst_item_add).addEventListener('submit', e => {
                
+        
         const fields = document.querySelectorAll('.invst--table--input input');
         const fieldsArr = Array.prototype.slice.call(fields);
 
@@ -111,29 +112,29 @@ class UIedits {
         allInvestments.push(e1);
         console.log(allInvestments);
 
-        // Display it in the UI
-        ui.displayInvestTable(e1);
+        // Display it in the UI - Python views.py
+        // ui.displayInvestTable(e1);
 
         // Update the Investment Summary
         investSum = calcSum(allInvestments, 'amt');
         investReturn = calcSum(allInvestments, 'maturity');
         investProfit = (investReturn - investSum) / investSum * 100;
 
-        // Display it in the UI
-        ui.displayInvestSumm(investSum, investReturn, investProfit);
+        // Display it in the UI- Python views.py
+        // ui.displayInvestSumm(investSum, investReturn, investProfit);
 
 
-        // Log it in the database
+        // Log it in the database - Python views.py
     });
 
     document.querySelector(ui.DOMstrings.invst_item_del).addEventListener('click', () => {
-        // delete from allInvestments
+    //     // delete from allInvestments
 
-        // update the investment table
+    //     // update the investment table
 
-        // update the investment summary
+    //     // update the investment summary
 
-        // update the UI
+    //     // update the UI
 
     });
 }
