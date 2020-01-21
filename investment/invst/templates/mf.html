@@ -9,12 +9,12 @@
                 <table class="table table-hover mf-table">
                     <thead class="thead-dark">
                         <tr>
-                            <th style="width: 13%;">Date</th>
-                            <th style="width: 50%;">Plan Name</th scope="col">
-                            <th style="width: 10%;">Platform</th scope="col">
-                            <th style="width: 10%;">Amount</th scope="col">
-                            <th style="width: 7%;">Lock-In</th scope="col">
-                            <th style="width: 10%;"></th>
+                            <th style="width: 12%;">Date</th>
+                            <th style="width: 45%;">Plan Name</th scope="col">
+                            <th>Platform</th scope="col">
+                            <th>Amount</th scope="col">
+                            <th>Lock-In</th scope="col">
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -35,8 +35,8 @@
                             <td>{{ i.date | date:'d-m-Y'}}</td>
                             <td>{{ i.planName }}</td>
                             <td>{{ i.platform }}</td>
-                            <td >{{ i.amount }}</td>
-                            <td >{{ i.lockin }}</td>
+                            <td class='amount'>{{ i.amount }}</td>
+                            <td>{{ i.lockin }}</td>
                             <td><button type="click"  class="item__delete--btn"><a href="delete-mf-{{ i.id }}"><img width="25px" height="25px" src="{% static 'img/trash-2.svg' %}" /></a></button>
                             </td>
                         </tr>
@@ -46,5 +46,10 @@
                 </table>
             </div>
         </div>
+        <div>
+            <h3>Total Investment</h3>
+            <span id=tot-amount></span>
+        </div>
     </div>
+    <script src="{% static 'js/script.js' %}"></script>
 {% endblock content %}

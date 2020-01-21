@@ -27,10 +27,10 @@
                         </tr>
                         
                         {% for i in row %}
-                        <tr id="dental-{{ i.id }}">
+                        <tr id="dental-{{ i.id }}" class="main-table-rows">
                             <td>{{ i.date | date:'d-m-Y'}}</td>
                             <td>{{ i.rx }}</td>
-                            <td >{{ i.amount }}</td>
+                            <td class='amount'>{{ i.amount }}</td>
                             <td><button type="click"  class="item__delete--btn"><a href="delete-dental-{{ i.id }}"><img width="25px" height="25px" src="{% static 'img/trash-2.svg' %}" /></a></button>
                             </td>
                         </tr>
@@ -40,5 +40,10 @@
                 </table>
             </div>
         </div>
+        <div>
+            <h3>Total Investment</h3>
+            <span id=tot-amount>1234</span>
+        </div>
     </div>
+    <script src="{% static 'js/script.js' %}"></script>
 {% endblock content %}
