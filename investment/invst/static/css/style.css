@@ -1,5 +1,7 @@
 body {
-      
+    height: 1400px;
+    width: 100%;
+    overflow-y: scroll;
     background-size: cover;
     background-repeat: no-repeat;
     background-image: url( "../img/background.png");
@@ -7,6 +9,7 @@ body {
     min-height: calc(100vh - 2 * 4vw);
     position: relative;
 }
+
 h1 {
     font-family: 'Gelasio', serif;
     margin-bottom: -3px;
@@ -23,6 +26,10 @@ nav li a:hover{
 
 th {
     padding-left: 1rem !important;
+}
+.active-tab >a{
+    color: blanchedalmond !important;
+    text-align: left; 
 }
 nav {
     margin: auto;
@@ -54,8 +61,8 @@ nav li {
     top: 70px;
     position: relative;
 }
-.mf-container {
-    max-width: 55%;
+.mf1-container {
+    max-width: 60%;
 
 }
 .container {
@@ -94,11 +101,11 @@ td>input {
     text-align: left;
     background: none;
     border: none;
-    border-bottom: 2px solid #C8CCD4;
+    border-bottom: 1px solid #C8CCD4;
     
 }
 
-.invst-table td, .dental-table td, .mf-table td {
+.invst-table td, .dental-table td, .mf-table td, #tot-amount {
     font-size: 1.2rem;
     font-weight: 500;
 }
@@ -107,3 +114,6 @@ td>input {
     color: ivory !important;
 }
 
+#tot-amount{
+    padding-left: 0.3rem;
+}

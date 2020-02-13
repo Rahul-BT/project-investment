@@ -6,8 +6,8 @@ class Invst(models.Model):
     date = models.DateField(verbose_name='Date')
     rx = models.CharField(verbose_name='RX', max_length=30)
     invst_type = models.CharField(verbose_name='Type', max_length=10)
-    amount = models.DecimalField(verbose_name='Amount', decimal_places=2, max_digits=7)
-    mat = models.DecimalField(verbose_name='Maturity', blank=True, null=True, decimal_places=2, max_digits=7)
+    amount = models.DecimalField(verbose_name='Amount', decimal_places=2, max_digits=9)
+    mat = models.DecimalField(verbose_name='Maturity', blank=True, null=True, decimal_places=2, max_digits=9)
     end_date = models.DateField(verbose_name='Date', blank=True, null=True)
     roi = models.FloatField(verbose_name='RoI', blank=True, null=True)
     months = models.IntegerField(verbose_name='Months', blank=True, null=True)
@@ -51,7 +51,7 @@ class MF(models.Model):
 
     class Meta:
         ordering = ['-date']
-        verbose_name = 'Mutual Funds'
+        verbose_name = 'Mutual Fund'
 
     def __str__(self):
         return f"{self.id}. {self.planName}"
