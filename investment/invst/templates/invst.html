@@ -1,0 +1,102 @@
+
+{% extends "base.html"%}
+
+{% block content %}
+{% load static %}
+    <div class="container invst-container">
+        <div class="row">
+            <div class="col-12"><h1>Investment Details</h1>
+                <table class="table table-hover invst-table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Date</th>
+                            <th>RX</th>
+                            <th>Type</th>
+                            <th>Amount</th>
+                            <th>Maturity</th>
+                            <th>End Date</th>
+                            <th>RoI</th>
+                            <th>Months</th>
+                            <th>RoI/yr</th>
+                            <th></th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- <tr class="invst--table--input" id="invst-0">
+                            <td><input style="width: 80px;" type="text" placeholder="Date" value="11-11-2019"></td>
+                            <td><input style="width: 140px;" type="text" placeholder="RX" value="Canara"></td>
+                            <td><input style="width: 40px;" type="text" placeholder="Type" value="RD"></td>
+                            <td><input style="width: 70px;" type="number" placeholder="Amount" value=1000></td>
+                            <td><input style="width: 70px;" type="number" placeholder="Maturity" value=1300></td>
+                            <td><input style="width: 80px;" type="text" placeholder="End Date" value="12-11-2020"></td>
+                            <td><input style="width: 70px; display: none;" type="number" placeholder="RoI"></td>
+                            <td><input style="width: 70px; display: none;" type="number" placeholder="Months"></td>
+                            <td></td>
+                            <td><button class="item__add--btn"><ion-icon name="add-circle-outline"></ion-icon></button></td>
+                            
+                        </tr> -->
+                        
+                        
+                        <tr class="invst--table--input" id="invst-0">
+                            <form action="{% url 'add_investment' %}" method="POST" id="form1">
+                                {% csrf_token %}
+                                <td><input style="width: 110px; text-align: left;" name="date" type="text" placeholder="Date" value="11-11-2019"></td>
+                                <td><input style="width: 100px; text-align: left;" name="rx" type="text" placeholder="RX" value="HDFC"></td>
+                                <td><input style="width: 60px; text-align: left;" name="invst_type" type="text" placeholder="Type" value="FD"></td>
+                                <td><input name="amount" type="number" placeholder="Amount" value=10000.00></td>
+                                <td><input name="maturity" type="number" placeholder="Maturity" value=13000.00></td>
+                                <td><input name="end_date" type="text" placeholder="End Date" value="12-11-2020"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </form>
+                            <td><button type="submit" form="form1" class="item__add--btn"><img width="25px" height="25px" src="{% static 'img/plus-circle.svg' %}" /></button></td>
+                        </tr>
+                        
+                        {% for i in row %}
+                        <tr id="invst-{{ i.id }}">
+                            <td>{{ i.date | date:'d-m-Y'}}</td>
+                            <td>{{ i.rx }}</td>
+                            <td>{{ i.invst_type }}</td>
+                            <td >{{ i.amount }}</td>
+                            <td >{{ i.mat }}</td>
+                            <td>{{ i.end_date | date:'d-m-Y'}}</td>
+                            <td >{{ i.roi }}%</td>
+                            <td>{{ i.months }}</td>
+                            <td >{{ i.roiYear }}%</td>
+                            <td>
+                                <button type="click"  class="item__delete--btn"><a href="delete-invst-{{ i.id }}"><img width="25px" height="25px" src="{% static 'img/trash-2.svg' %}" /></a>
+                                </button>
+                            </td>
+                            
+                        </tr>
+                        {% endfor %}
+
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="col-5"><h1>Summary</h1>
+                <table class="table table-hover invst-summ-table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Total Investment</th>
+                            <th>Total Returns</th>
+                            <th>Profit Increase</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="font-size: large; font-weight: bold;">
+                            <td id="invst_sum">Rs {{ amount_total }}</td>
+                            <td id="invst_return">Rs {{ mat_total }}</td>
+                            <td id="invst_profit">{{ prof }}%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'js/script.js' %}"></script>
+{% endblock content %}

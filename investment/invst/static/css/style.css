@@ -1,0 +1,119 @@
+body {
+    height: 1400px;
+    width: 100%;
+    overflow-y: scroll;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url( "../img/background.png");
+    /* background-color: black; */
+    min-height: calc(100vh - 2 * 4vw);
+    position: relative;
+}
+
+h1 {
+    font-family: 'Gelasio', serif;
+    margin-bottom: -3px;
+}
+nav li a {
+    text-decoration: none;
+    color: black;
+    transition: color 0.5s ease-in-out;
+}
+nav li a:hover{
+    color: white;
+    text-decoration: none;
+}
+
+th {
+    padding-left: 1rem !important;
+}
+.active-tab >a{
+    color: blanchedalmond !important;
+    text-align: left; 
+}
+nav {
+    margin: auto;
+    text-align: center;
+    position: fixed;
+    z-index: 1;
+    background-color: cadetblue;
+    width: 100%;
+    padding: 10px 0px;
+}
+
+nav ul{
+    margin: auto;
+}
+
+nav li {
+    display: inline-block;
+    padding: 10px;
+    text-transform: uppercase;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.invst-container {
+    /* margin-right: 300px;
+    border: blueviolet;
+    border-style: solid; */
+    max-width: 90%;
+    top: 70px;
+    position: relative;
+}
+.mf1-container {
+    max-width: 60%;
+
+}
+.container {
+    top:70px;
+    position: relative;
+}
+
+
+.item__add--btn, .item__delete--btn {
+    
+    font-size: 30px;
+    font-weight: 900;
+    border: 10px;
+    cursor: pointer;
+    background: none;
+    vertical-align: middle;
+    line-height: 1;
+    
+}
+button.item__delete--btn:hover, button.item__add--btn:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 50%;
+    border: 0px solid black;
+}
+button.item__delete--btn, button.item__add--btn {
+    padding-bottom: 8px;
+    padding-top: 2px;
+    margin-top: -9px;
+}
+
+.item__delete--btn:active { transform: translateY(10%); }
+.item__add--btn:active { transform: translateY(10%); }
+
+td>input {
+    width: 100px;
+    text-align: left;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #C8CCD4;
+    
+}
+
+.invst-table td, .dental-table td, .mf-table td, #tot-amount {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.table-hover tr:hover{
+    color: ivory !important;
+}
+
+#tot-amount{
+    padding-left: 0.3rem;
+}
