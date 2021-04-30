@@ -25,7 +25,7 @@
                                 <td><input style="width: 100%; text-align: left;" name="planName" type="text" placeholder="RX" value="Axis Direct Fund"></td>
                                 <td><input style="width: 100%;" type="text" name="platform" placeholder="Type" value="Groww"></td>
                                 <td><input style="width: 100%;" type="number" name="amount" placeholder="Amount" value=10000.00></td>
-                                <td><input style="width: 100%;" type="number" name="lockin" placeholder="Lock-In" value=3.0></td>
+                                <td><input style="width: 100%;" type="number" name="lockin" placeholder="None" ></td>
                             </form>
                             <td><button type="submit" form="form2" class="item__add--btn"><img width="25px" height="25px" src="{% static 'img/plus-circle.svg' %}" /></button></td>
                         </tr>
@@ -48,7 +48,7 @@
         </div>
         <div>
             <h3>Total Investment</h3>
-            <span id=tot-amount></span>
+            <span id=tot-amount>Rs {{ amount_total }}</span>
         </div>
     </div>
     <script src="{% static 'js/script.js' %}"></script>

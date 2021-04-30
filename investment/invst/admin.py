@@ -1,7 +1,7 @@
 from django.contrib import admin
 
-from .models import Invst, Dental, MF
+from .models import Invst,  MF 
 # Register your models here.
 
 admin.site.register(Invst)
-admin.site.register([Dental, MF])
+admin.site.register(MF)

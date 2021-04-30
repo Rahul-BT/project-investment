@@ -52,7 +52,7 @@
                                 <form action="{% url 'add_investment' %}" method="POST" id="form1">
                                     {% csrf_token %}
                                     <td><input name="date" type="text" placeholder="Date" value="11-11-2019"></td>
-                                    <td><input style="width: 140px; text-align: left;" name="rx" type="text" placeholder="RX" value="Deepak"></td>
+                                    <td><input style="width: 140px; text-align: left;" name="rx" type="text" placeholder="RX" value="HDFC"></td>
                                     <td><input style="width: 40px;" name="invst_type" type="text" placeholder="Type" value="FD"></td>
                                     <td><input style="width: 70px;" name="amount" type="number" placeholder="Amount" value=10000></td>
                                     <td><input style="width: 70px;" name="maturity" type="number" placeholder="Maturity" value=13000></td>
@@ -87,7 +87,7 @@
                     </table>
                 </div>
                 
-                <div class="col-3">Investment Sumary
+                <div class="col-3">Sumary
                     <table class="table table-hover">
                         <thead class="thead-dark">
                             <tr>
@@ -116,39 +116,7 @@
         
             
         
-        <div class="dentist">
-            <div class="dentist--part-1 clearfix"><h2>Dent Investment</h2>
-                <table class="dentist--table">
-                    <tr class="dentist--table--heading">
-                        <th>Date of Deposit</th>
-                        <th>RX</th>
-                        <th>Amount</th>
-                    </tr>
-                    <tr class="dentist--table--heading" id="dentist-1">
-                        <td></td>
-                        <td>UCO Bank</td>
-                        <td>30,000</td>
-                    </tr>
-                    <tr class="dentist--table--row" id="dentist-2">
-                        <td></td>
-                        <td>UCO Bank</td>
-                        <td>20,000</td>
-                    </tr>
-                </table>
-            </div>
-            
-            <div class="dentist--part-2 clearfix"> <h2>Dent Investment Summary</h2>
-                <table class="total--dentist--table">
-                    <tr class="total--dentist--table--heading">
-                        <th>Total Investment</th>
-                    </tr>
-                    <tr class="total--dentist--table--row">
-                        <td>50,000</td>
-                    </tr>
-                </table>
-            </div>
-            
-        </div>
+        
             
             
         

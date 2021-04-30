@@ -29,18 +29,9 @@ class Invst(models.Model):
         
         # Compute roi/Year
         self.roiYear = round(self.roi/self.months * 12, 2)
+
+   # def returnVariable(self):
         
-class Dental(models.Model):
-    date = models.DateField(verbose_name='Date')
-    rx = models.CharField(verbose_name='RX', max_length=30)
-    amount = models.DecimalField(verbose_name='Amount', decimal_places=2, max_digits=7)
-
-    class Meta:
-        ordering = ['-date']
-        verbose_name = 'Dental'
-
-    def __str__(self):
-        return f"{self.id}. {self.rx} - {self.amount}"
 
 class MF(models.Model):
     date = models.DateField(verbose_name='Date')

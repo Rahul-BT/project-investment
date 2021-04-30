@@ -1,8 +1,50 @@
-from django.shortcuts import render, reverse
+from django.shortcuts import render, reverse, redirect
+from django.contrib.auth import authenticate, get_user_model, login, logout
+from django.contrib.auth.decorators import login_required
 from django.views.generic import TemplateView # Import TemplateView
 from django.http import HttpResponse, HttpResponseRedirect
-from .models import Invst, Dental, MF
+from .models import Invst, MF
+from .forms import UserLoginForm, UserRegisterForm
 from datetime import date
+
+
+def loginView(request):
+    next = request.GET.get('next')
+    form = UserLoginForm(request.POST or None)
+    if form.is_valid():
+        username = form.cleaned_data.get('username')
+        password = form.cleaned_data.get('password')
+        user = authenticate(username=username, password=password)
+        if user:
+            login(request, user)
+            # if next:
+            #     return redirect(next)
+            # return HttpResponseRedirect(reverse('home'))
+            return redirect('mf')
+    context = {'form': form}
+    return render(request, 'login.html', context)
+
+
+def registerView(request):
+    next = request.GET.get('next')
+    form = UserRegisterForm(request.POST or None)
+    if form.is_valid():
+        user = form.save(commit=False)
+        password = form.cleaned_data.get('password')
+        user.set_password(password)
+        user.save()
+        new_user = authenticate(username=user.username, password=password)
+        login(request, new_user)
+        if next:
+            return redirect(next)
+        return redirect('/')
+            
+    context = {'form': form}
+    return render(request, 'login.html', context)
+
+def logoutView(request):
+    logout(request)
+    return redirect('/')
 
 
 def format_date(d):
@@ -13,6 +55,7 @@ def format_date(d):
 def format_num(num):
     return '{},{}'.format(str(num)[:-6], str(num)[-6:])
 
+#@login_required
 def HomePageView(request):
     row = Invst.objects.all()
     amount_total = 0
@@ -28,21 +71,17 @@ def HomePageView(request):
     context = {'row': row, 'amount_total':format_num(amount_total), 'mat_total':format_num(mat_total), 'prof':prof}
 
     return render(request, 'invst.html', context)
-
-def dentalView(request):
-    row = Dental.objects.all()
-    for i in row:
-        i.amount = format_num(i.amount)
-    context = {'row': row}
-
-    return render(request, 'dental.html', context)
+    # return render(request, 'testing.html')
 
 
+#@login_required
 def mfView(request):
     row = MF.objects.all()
+    amount_total = 0
     for i in row:
+        amount_total += i.amount
         i.amount = format_num(i.amount)
-    context = {'row': row}
+    context = {'row': row, 'amount_total':format_num(amount_total)}
 
     return render(request, 'mf.html', context)
 
@@ -73,16 +112,6 @@ def addMF(request):
 
         return HttpResponseRedirect(reverse('mf'))
 
-def addDental(request):
-    if request.method == 'POST':
-        row = Dental()
-        row.date = format_date(request.POST['date'])
-        row.rx = request.POST['rx']
-        row.amount = request.POST['amount']
-        row.save()
-
-        return HttpResponseRedirect(reverse('dental'))
-
 
 def delInvestment(request, modelName, list_id):
     # // do nothing
@@ -90,13 +119,19 @@ def delInvestment(request, modelName, list_id):
         try:
             if(modelName == 'invst'): m = Invst
             elif (modelName == 'mf'): m = MF
-            elif (modelName == 'dental'): m = Dental
             else: m = None
             m.objects.get(id=list_id).delete()
             return HttpResponseRedirect(reverse(modelName))
         except:
             return render(request, 'error.html')
 
-
         # if list_id in
     return HttpResponse('Hi')
+
+
+def testing(request):
+    invst = Invst.objects.all()
+    mf = MF.objects.all()
+
+    context = {'invst': invst, 'mf': mf} 
+    return render(request, 'testing.html', context)

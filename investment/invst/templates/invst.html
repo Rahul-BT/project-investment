@@ -5,7 +5,7 @@
 {% load static %}
     <div class="container invst-container">
         <div class="row">
-            <div class="col-9"><h1>Investment Details</h1>
+            <div class="col-12"><h1>Investment Details</h1>
                 <table class="table table-hover invst-table">
                     <thead class="thead-dark">
                         <tr>
@@ -41,9 +41,9 @@
                         <tr class="invst--table--input" id="invst-0">
                             <form action="{% url 'add_investment' %}" method="POST" id="form1">
                                 {% csrf_token %}
-                                <td><input name="date" type="text" placeholder="Date" value="11-11-2019"></td>
-                                <td><input style="width: 140px; text-align: left;" name="rx" type="text" placeholder="RX" value="Deepak"></td>
-                                <td><input style="width: 40px; text-align: left;" name="invst_type" type="text" placeholder="Type" value="FD"></td>
+                                <td><input style="width: 110px; text-align: left;" name="date" type="text" placeholder="Date" value="11-11-2019"></td>
+                                <td><input style="width: 100px; text-align: left;" name="rx" type="text" placeholder="RX" value="HDFC"></td>
+                                <td><input style="width: 60px; text-align: left;" name="invst_type" type="text" placeholder="Type" value="FD"></td>
                                 <td><input name="amount" type="number" placeholder="Amount" value=10000.00></td>
                                 <td><input name="maturity" type="number" placeholder="Maturity" value=13000.00></td>
                                 <td><input name="end_date" type="text" placeholder="End Date" value="12-11-2020"></td>
@@ -77,7 +77,7 @@
                 </table>
             </div>
             
-            <div class="col-3"><h1>Investment Summary</h1>
+            <div class="col-5"><h1>Summary</h1>
                 <table class="table table-hover invst-summ-table">
                     <thead class="thead-dark">
                         <tr>
@@ -88,8 +88,8 @@
                     </thead>
                     <tbody>
                         <tr style="font-size: large; font-weight: bold;">
-                            <td id="invst_sum">{{ amount_total }}</td>
-                            <td id="invst_return">{{ mat_total }}</td>
+                            <td id="invst_sum">Rs {{ amount_total }}</td>
+                            <td id="invst_return">Rs {{ mat_total }}</td>
                             <td id="invst_profit">{{ prof }}%</td>
                         </tr>
                     </tbody>
