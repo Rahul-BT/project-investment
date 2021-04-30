@@ -1,0 +1,180 @@
+body {
+      
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(315deg, #63a4ff 0%, #83eaf1 74%);
+    min-height: calc(100vh - 2 * 4vw);
+
+}
+
+
+.wrapper {
+    border-width: 2px;
+    border-color: blue;
+     
+}
+
+.clear { clear: both; }
+
+.clearfix {
+    clear: both;
+    display: table;
+    content: "ss";
+}
+
+.invst {
+    border-style: solid;
+    border-width: 2px;
+    border-color: blue;
+    padding: 10px;
+    height: 300px;
+    width: auto;
+    top: 100px;
+    position: relative;
+}
+
+.invst--part-1 {
+    border-style: solid;
+    border-width: 2px;
+    border-color: green;
+    padding: 10px;
+    right: 50%;
+    position: absolute;
+    
+}
+
+table {
+    margin: 0px;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: wheat;   
+    text-align: center;
+}
+
+td {
+    padding: 5px 8px 5px 8px;
+}
+
+.invst--table--heading, .total--invst--table--heading{
+    color: #28B9B5;
+    text-align: left;
+}
+
+
+.invst--table--row {
+    
+}
+
+.invst--part-2  {
+    border-style: solid;
+    border-width: 2px;
+    border-color: yellowgreen;
+    width: 500px;
+    padding: 10px;
+    margin-left: 10px;
+    left: 50%;
+    position: relative;
+    
+}
+
+.total--invst--table {
+    margin: 0px;
+    border-collapse: collapse;
+    
+    
+    
+}
+
+.total--invst--table--heading, .total--invst--table--row {
+    width:550px;
+    text-align: center;
+    
+}
+
+.dentist {
+    border-style: solid;
+    border-width: 2px;
+    border-color: blue;
+    padding: 10px;
+    height: 200px;;
+    top: 100px;
+    position: relative;
+    display: none;
+    
+    
+}
+.dentist--part-1 {
+    border-style: solid;
+    border-width: 2px;
+    border-color: red;
+    padding: 10px;
+    width: auto;
+    right: 50%;
+    position: absolute;
+    
+}
+
+.dentist--table {
+    
+}
+
+.dentist--table--heading {
+    
+}
+
+.dentist--table--row {
+    
+}
+
+.dentist--part-2 {
+    border-style: solid;
+    border-width: 2px;
+    border-color: khaki;
+    padding: 10px;
+    margin-left: 10px;
+    width: auto;
+    left: 50%;
+    position: relative;
+    
+    
+}
+
+.total--dentist--table {
+    
+}
+
+.total--dentist--table--heading {
+    
+}
+
+.total--dentist--table--row {
+    
+}
+
+.item__add--btn, .item__delete--btn {
+    
+    font-size: 22px;
+    border: 10px;
+    cursor: pointer;
+    background: none;
+    vertical-align: middle;
+    line-height: 1;
+    
+}
+
+.item__add--btn { color: #28B9B5;}
+.item__delete--btn { color: #eb5834; }
+.item__delete--btn:active { transform: translateY(10%); }
+.item__add--btn:active { transform: translateY(10%); }
+
+input {
+    width: 20px;
+    text-align: center;
+    border: 1px solid #e7e7e7;
+    background-color: #fff;
+}
+
+
+
