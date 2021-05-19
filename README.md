@@ -1,5 +1,5 @@
 # project-investment
-Repo for the project investment
+Django project to display a user's investment details. This is a basic project to practise the new learnings.
 
 ### Aim
 
